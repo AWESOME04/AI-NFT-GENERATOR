@@ -1,70 +1,130 @@
-# Getting Started with Create React App
+# NFT Creator
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project is a React-based decentralized application (dApp) that allows users to generate unique NFTs (Non-Fungible Tokens) using AI-generated images. The images are created using the ORA plugin with web3.js on the Sepolia Testnet and are securely stored on the blockchain.
 
-## Available Scripts
+## Table of Contents
 
-In the project directory, you can run:
+- [Introduction](#introduction)
+- [Features](#features)
+- [Getting Started](#getting-started)
+  - [Prerequisites](#prerequisites)
+  - [Installation](#installation)
+  - [Running the App](#running-the-app)
+- [Usage](#usage)
+  - [Estimate Fee](#estimate-fee)
+  - [Generate Image](#generate-image)
+- [Project Structure](#project-structure)
+- [Technology Stack](#technology-stack)
+- [Contributing](#contributing)
+- [License](#license)
 
-### `npm start`
+## Introduction
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+The NFT Creator app enables users to generate AI-based images that are minted as NFTs on the blockchain. Users can connect their MetaMask wallet, enter a creative prompt, estimate the transaction fee, and generate an image. The generated image is then stored on IPFS, and the transaction details, including the image's IPFS hash, are displayed.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Features
 
-### `npm test`
+- **AI-Powered Image Generation**: Leverage AI models to generate unique images based on user prompts.
+- **Blockchain Integration**: Mint NFTs and store them securely on the blockchain using the Sepolia Testnet.
+- **IPFS Storage**: Generated images are stored on IPFS, providing a decentralized and secure storage solution.
+- **MetaMask Integration**: Easily connect your MetaMask wallet to interact with the dApp.
+- **Interactive UI**: User-friendly interface with real-time updates on transaction status and generated results.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Getting Started
 
-### `npm run build`
+### Prerequisites
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Before you begin, ensure you have the following installed:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- **Node.js** (v14 or later)
+- **npm** (v6 or later) or **yarn**
+- **MetaMask** browser extension
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Installation
 
-### `npm run eject`
+1. **Clone the repository**:
+    ```bash
+    git clone https://github.com/yourusername/nft-creator.git
+    cd nft-creator
+    ```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+2. **Install dependencies**:
+    ```bash
+    npm install
+    ```
+    or
+    ```bash
+    yarn install
+    ```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Running the App
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+1. **Start the development server**:
+    ```bash
+    npm start
+    ```
+    or
+    ```bash
+    yarn start
+    ```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+2. **Open your browser** and navigate to `http://localhost:3000`. Make sure your MetaMask wallet is connected to the Sepolia Testnet.
 
-## Learn More
+## Usage
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Estimate Fee
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- Enter a prompt in the input field.
+- Click the "Estimate Fee" button to get the estimated cost of generating an NFT based on the entered prompt.
 
-### Code Splitting
+### Generate Image
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+- After estimating the fee, click the "Generate Image" button.
+- The application will send a transaction to the blockchain, which you can track using the displayed transaction hash.
+- Wait for about 30 seconds for the image to be generated.
+- The generated image's IPFS hash will be displayed, along with a preview of the image.
 
-### Analyzing the Bundle Size
+## Project Structure
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+```bash
+nft-creator/
+├── public/
+│   ├── index.html
+│   └── ...
+├── src/
+│   ├── components/
+│   ├── App.js
+│   ├── App.css
+│   └── index.js
+├── .gitignore
+├── package.json
+├── README.md
+└── ...
+```
 
-### Making a Progressive Web App
+- `public/`: Static files like `index.html`.
+- `src/components/`: React components.
+- `src/App.js`: Main application component.
+- `src/App.css`: Styles for the application.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## Technology Stack
 
-### Advanced Configuration
+- **React**: Frontend library for building user interfaces.
+- **Web3.js**: Ethereum JavaScript API to interact with the blockchain.
+- **ORA Plugin**: Web3 plugin for interacting with AI models and generating NFTs.
+- **MetaMask**: Wallet for managing blockchain transactions.
+- **IPFS**: Decentralized storage system for storing the generated images.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## Contributing
 
-### Deployment
+Contributions are welcome! Please fork this repository and submit a pull request with your changes. Make sure to follow the coding standards and write tests for any new features.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+1. Fork the repository
+2. Create a new branch (`git checkout -b feature-branch`)
+3. Commit your changes (`git commit -m 'Add some feature'`)
+4. Push to the branch (`git push origin feature-branch`)
+5. Open a pull request
 
-### `npm run build` fails to minify
+## License
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.
